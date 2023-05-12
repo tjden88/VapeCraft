@@ -1,5 +1,39 @@
 {% extends 'layout.html' %}
 
-{% block title %}Рецепты{% endblock title %}
+{% block title %}Список рецептов{% endblock title %}
 
-{% block body %}Список рецептов{% endblock body %}
+{% block body %}
+
+<div class="container mt-3">
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col-md-12 col-lg-6 col-xl-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ recipe.name }}</h5>
+                      <p class="card-text">{{ recipe.description|truncatechars:20 }}</p>
+                      <p class="card-text">
+                        <small class=" text-muted">
+                            <span class="fa fa-star {% if recipe.rating > 0 %} text-warning {% endif %}"></span>
+                            <span class="fa fa-star {% if recipe.rating > 1 %} text-warning {% endif %}"></span>
+                            <span class="fa fa-star {% if recipe.rating > 2 %} text-warning {% endif %}"></span>
+                            <span class="fa fa-star {% if recipe.rating > 3 %} text-warning {% endif %}" ></span>
+                            <span class="fa fa-star {% if recipe.rating > 4 %} text-warning {% endif %}"></span>
+                        </small>
+                      </p>
+                      <p class="card-text"><small class="text-muted">Обновлён: {{ recipe.modified|date:"d E Y" }}</small></p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}
