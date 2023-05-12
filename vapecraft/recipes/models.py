@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.urls import reverse
 
 class Recipe(models.Model):
     name = models.CharField("Название", max_length=50, unique=True)
@@ -11,6 +12,11 @@ class Recipe(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+    def get_absolute_url(self):
+        return reverse("recipes", kwargs={})
+    
 
 
     class Meta:
