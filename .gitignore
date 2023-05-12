@@ -1,0 +1,3 @@
+vapecraft/media/**
+vapecraft/**.sqlite3
+vapecraft/recipes/__pycache__/**
