@@ -1,9 +1,17 @@
 <header class="d-flex justify-content-center py-3 bg-dark">
-    <div class="container">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Рецепты</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Ароматизаторы</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Расчёт основы</a></li>
-      </ul>
+    {% load static %}
+    <div class="container-fluid">
+        <div class="row row-cols-auto">
+            <div class="col">
+                <img src="{% static "img/icon.png" %}" alt="image">
+            </div>
+            <div class="col">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Рецепты</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Ароматизаторы</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Расчёт основы</a></li>
+                  </ul>
+            </div>
+        </div>
   </div>
 </header>
