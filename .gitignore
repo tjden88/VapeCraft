@@ -1,3 +1,4 @@
 vapecraft/media/**
 vapecraft/**.sqlite3
 **__pycache__**
+*.pyc
