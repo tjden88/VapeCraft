@@ -5,6 +5,8 @@ class Recipe(models.Model):
     description = models.TextField("Описание", blank=True, null=True)
     rating = models.IntegerField('Рейтинг')
     image = models.ImageField('Изображение', upload_to='img/recipes/', height_field=None, width_field=None, max_length=None)
+    created = models.DateTimeField("Создан", auto_now_add=True)
+    modified = models.DateTimeField("Обновлён", auto_now=True)
 
     def __str__(self) -> str:
         return self.name
