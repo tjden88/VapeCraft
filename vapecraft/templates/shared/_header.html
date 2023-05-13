@@ -3,14 +3,24 @@
     <div class="container-fluid">
         <div class="row row-cols-auto">
             <div class="col">
-                <img src="{% static "img/icon.png" %}" alt="image">
+                <img src="{% static "img/icon.png" %}" alt="image" style="max-height: 200px;">
             </div>
-            <div class="col">
-                <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Рецепты</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Ароматизаторы</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Расчёт основы</a></li>
-                  </ul>
+            <div class="col d-flex align-content-between flex-wrap">
+                <div class="row">
+                    <h1 class="display-1 text-info">Vape Craft</h1>
+                </div>
+                <div class="flex-column mb-3">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">
+                            <i class="fa fa-mortar-pestle"></i> Рецепты</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">
+                            <i class="fas fa-eye-dropper"></i> Ароматизаторы</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">
+                            <i class="fas fa-wine-bottle"></i></i> Расчёт основы</a></li>
+                        <li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link">
+                            <i class="fa fa-user"></i> Админка</a></li>
+                      </ul>
+                </div>
             </div>
         </div>
   </div>
