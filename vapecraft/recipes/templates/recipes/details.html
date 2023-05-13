@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ object.name }}{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <div class="card m-3">
+        <div class="card-body">
+            {% if object.image %}
+            <img src="{{ object.image.url }}" alt="" width="350" class="float-left mr-3">
+            {% endif %}
+    
+            <h3 class="card-title">{{ object.name }}</h3>
+            <p class="card-text">{{ object.description|linebreaks }}</p>
+            <p class="card-text">
+                <small class=" text-muted">
+                    <span class="fa fa-star {% if object.rating > 0 %} text-warning {% endif %}"></span>
+                    <span class="fa fa-star {% if object.rating > 1 %} text-warning {% endif %}"></span>
+                    <span class="fa fa-star {% if object.rating > 2 %} text-warning {% endif %}"></span>
+                    <span class="fa fa-star {% if object.rating > 3 %} text-warning {% endif %}" ></span>
+                    <span class="fa fa-star {% if object.rating > 4 %} text-warning {% endif %}"></span>
+                </small>
+              </p>
+        </div>
+        <div class="card-footer text-muted">
+           Создан: {{ object.created|date:"d E Y" }} <i class="fas fa-caret-right mx-3"></i> Обновлён: {{ object.modified|date:"d E Y" }}
+    </div>
+</div>
+{% endblock body %}

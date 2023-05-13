@@ -14,7 +14,7 @@
                     <div class="col-md-4 d-flex justify-content-center align-items-center" >
 
                         {% if recipe.image %}
-                        <img src="{{ recipe.image.url }}" class="img-fluid rounded-start" alt="...">
+                        <img src="{{ recipe.image.url }}" class="img-fluid ml-2" alt="...">
                         {% else %}
                         <i class="fa fa-mortar-pestle display-1 text-success"></i>
                         {% endif %}
@@ -33,7 +33,7 @@
                               <span class="fa fa-star {% if recipe.rating > 4 %} text-warning {% endif %}"></span>
                           </small>
                         </p>
-                        <a href="#" class="btn btn-primary">Подробнее</a>
+                        <a href="{{ recipe.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
                       </div>
                     </div>
                   </div>
